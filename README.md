@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# Mackenzie Mittereder Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my personal portfolio website showcasing my work experience, education, and various projects I've developed.
+
+## About
+
+This portfolio website has been converted from a React application to Next.js for improved performance, SEO, and modern development practices.
+
+## Features
+
+- **Home Page**: Displays work experience and education with company logos and detailed information
+- **Projects Page**: Grid layout showcasing all projects with clickable cards
+- **Individual Project Pages**: Detailed pages for each project with screenshots and descriptions
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **Google Analytics**: Integrated with React GA4 for tracking
+
+## Technologies Used
+
+- **Next.js 14**: React framework with App Router
+- **React 18**: Latest version with modern features
+- **Tailwind CSS**: Utility-first CSS framework
+- **Moment.js**: Date/time manipulation
+- **React GA4**: Google Analytics integration
+
+## Project Structure
+
+```
+├── app/                    # Next.js App Router pages
+│   ├── layout.js          # Root layout component
+│   ├── page.js            # Home page
+│   ├── projects/          # Projects pages
+│   └── globals.css        # Global styles
+├── components/            # React components
+│   ├── Nav/              # Navigation components
+│   ├── Pages/            # Page components
+│   ├── Projects/         # Project detail components
+│   ├── Tile/             # Content tile components
+│   └── Card/             # Project card component
+├── public/               # Static assets
+│   └── images/           # All images and logos
+└── package.json          # Dependencies and scripts
+```
+
+## Getting Started
+
+1. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+2. **Run development server**:
+
+   ```bash
+   npm run dev
+   ```
+
+3. **Open your browser**:
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run export` - Export static site
 
-### `npm start`
+## Projects Showcased
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Mittereder.com** - This portfolio website
+- **Gradez** - Android grade tracking app
+- **Franklin Regional** - School district mobile app
+- **Life Counter** - Magic: The Gathering life counter
+- **Frame It** - iOS photo framing app
+- **Cuz** - React Native chat app
+- **Fast Movie Photos** - Movie photo app
+- **Graph Game** - Educational graph game
+- **Words and Music** - Music app
+- **Vehicle App** - Vehicle management app
+- **Rock Paper Scissors** - Game app
+- **Pinball Price** - Pinball pricing app
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Deployment
 
-### `npm test`
+This site can be deployed to various platforms:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Vercel** (recommended for Next.js)
+- **Netlify**
+- **GitHub Pages**
+- **AWS Amplify**
 
-### `npm run build`
+## Conversion Notes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This website was successfully converted from a React application using:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React Router → Next.js App Router
+- Create React App → Next.js
+- Static image imports → Next.js Image component
+- Manual routing → File-based routing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The conversion maintains all original functionality while providing:
 
-### `npm run eject`
+- Better SEO with server-side rendering
+- Improved performance with Next.js optimizations
+- Modern development experience
+- Better image optimization
+- Automatic code splitting
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Contact
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **GitHub**: [macmittereder](https://github.com/macmittereder)
+- **LinkedIn**: [Mackenzie Mittereder](https://www.linkedin.com/in/mackenzie-mittereder/)
