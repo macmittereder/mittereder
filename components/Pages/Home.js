@@ -33,7 +33,7 @@ const Home = () => {
       content: [
         "Developed internal tools and applications to streamline customer relations workflows and improve team productivity",
         "Collaborated with cross-functional teams to design and implement scalable solutions using modern web technologies",
-        "Mentored junior developers and conducted code reviews to maintain high code quality standards",
+        "Mentored peers and conducted code reviews to maintain high code quality standards",
       ],
       technologies: ["React", "Node.js", "TypeScript", "PostgreSQL"],
       achievements: [
@@ -107,83 +107,6 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      {/* About Section */}
-      <section id="about" className="section">
-        <div className="container">
-          <div
-            className={`text-center mb-20 transition-all duration-1000 ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
-            }`}
-          >
-            <h2 className="text-5xl md:text-6xl font-bold mb-8">
-              <span className="gradient-text">About Me</span>
-            </h2>
-            <p className="text-xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              I'm a passionate software engineer with over 6 years of experience
-              building scalable applications and innovative solutions. I
-              specialize in full-stack development, cloud architecture, and
-              modern web technologies.
-            </p>
-          </div>
-
-          {/* Skills Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-            {[
-              {
-                title: "Frontend",
-                skills: [
-                  "React",
-                  "Next.js",
-                  "TypeScript",
-                  "Tailwind CSS",
-                  "HTML/CSS",
-                ],
-              },
-              {
-                title: "Backend",
-                skills: ["Node.js", "Python", ".NET", "C#", "REST APIs"],
-              },
-              {
-                title: "Database & Cloud",
-                skills: [
-                  "PostgreSQL",
-                  "SQL Server",
-                  "MongoDB",
-                  "AWS",
-                  "Firebase",
-                ],
-              },
-              {
-                title: "DevOps & Tools",
-                skills: ["Git", "Docker", "CI/CD", "Linux", "Agile/Scrum"],
-              },
-            ].map((category, index) => (
-              <div
-                key={category.title}
-                className="card hover-lift"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <h3 className="text-lg font-semibold mb-6 text-blue-400">
-                  {category.title}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1 bg-slate-700/50 text-slate-300 text-sm rounded-full border border-slate-600/50"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Experience Section */}
       <section className="section bg-slate-900/30">
         <div className="container">
