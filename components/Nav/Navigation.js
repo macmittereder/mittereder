@@ -21,7 +21,7 @@ const Navigation = () => {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "/projects", label: "Projects" },
+    { href: "/#experience", label: "Experience" },
   ];
 
   return (
@@ -74,7 +74,7 @@ const Navigation = () => {
             </a>
             <div className="flex items-center space-x-2">
               <a
-                href="https://github.com/mittereder"
+                href="https://github.com/macmittereder"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 transition-all duration-300 hover:scale-110 group"

@@ -46,10 +46,10 @@ const Header = () => {
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <a
-                  href="/projects"
+                  href="#experience"
                   className="btn-primary inline-flex items-center gap-2"
                 >
-                  View Projects
+                  View Experience
                   <svg
                     className="w-5 h-5"
                     fill="none"
@@ -88,10 +88,11 @@ const Header = () => {
                   </span>
                   <Image
                     src="/images/webstaurantstore-logo.png"
-                    width={110}
-                    height={24}
+                    width={360}
+                    height={80}
                     alt="WebstaurantStore"
-                    className="h-7 md:h-9 w-auto opacity-95 hover:opacity-100 transition-opacity"
+                    className="h-10 sm:h-14 md:h-20 lg:h-24 w-auto opacity-95 hover:opacity-100 transition-opacity"
+                    priority
                   />
                 </div>
                 <div className="flex flex-wrap items-center gap-3 md:gap-4">
@@ -101,21 +102,21 @@ const Header = () => {
                     width={90}
                     height={24}
                     alt="Lexicon"
-                    className="h-5 md:h-6 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    className="h-5 sm:h-6 md:h-7 w-auto opacity-70 hover:opacity-100 transition-opacity"
                   />
                   <Image
                     src="/images/dollar-bank-logo.png"
                     width={90}
                     height={24}
                     alt="Dollar Bank"
-                    className="h-5 md:h-6 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    className="h-5 sm:h-6 md:h-7 w-auto opacity-70 hover:opacity-100 transition-opacity"
                   />
                   <Image
                     src="/images/aSa-logo.png"
                     width={60}
                     height={24}
                     alt="aSa"
-                    className="h-5 md:h-6 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                    className="h-5 sm:h-6 md:h-7 w-auto opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
               </div>

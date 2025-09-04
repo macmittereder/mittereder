@@ -34,11 +34,20 @@ const Home = () => {
         "Developed internal tools and applications to streamline customer relations workflows and improve team productivity",
         "Collaborated with cross-functional teams to design and implement scalable solutions using modern web technologies",
         "Mentored peers and conducted code reviews to maintain high code quality standards",
+        "Maintained 80%+ code coverage on pull requests with comprehensive unit and integration tests; added Playwright end-to-end coverage where appropriate",
       ],
-      technologies: ["React", "Node.js", "TypeScript", "PostgreSQL"],
-      achievements: [
-        "Improved team efficiency by 25%",
-        "Reduced bug reports by 40%",
+      technologies: [
+        "React",
+        "C#/.NET",
+        "TypeScript",
+        "REST APIs",
+        "GraphQL",
+        "RabbitMQ",
+        "Kubernetes",
+        "Grafana",
+        "Vault",
+        "Playwright",
+        "SQL Server (SSMS)",
       ],
     },
     {
@@ -49,12 +58,11 @@ const Home = () => {
       time: "March 2023 - March 2024",
       timeSummary: " (1 yr)",
       content: [
-        "Integrated new features in modern React applications and refactored legacy codebase for improved maintainability",
+        "Integrated new features in modern Angular applications and refactored legacy codebase for improved maintainability",
         "Worked closely with QA and PMOs to design, build, and deliver software features with high user satisfaction",
         "Implemented database optimizations and API improvements resulting in 30% faster response times",
       ],
-      technologies: ["React", "Node.js", "PostgreSQL", "REST APIs"],
-      achievements: ["30% performance improvement", "95% user satisfaction"],
+      technologies: ["Angular", "C#/.NET", "SSMS", "REST APIs"],
     },
     {
       company: "Dollar Bank",
@@ -68,8 +76,7 @@ const Home = () => {
         "Led the migration of legacy ASP.NET web pages to modern .NET MVC architecture",
         "Built and maintained SSIS packages for critical data migration and synchronization between systems",
       ],
-      technologies: [".NET", "C#", "SQL Server", "SSIS", "ASP.NET MVC"],
-      achievements: ["Migrated 50+ legacy pages", "99.9% system uptime"],
+      technologies: ["Razor", "C#/.NET", "SQL Server", "SSIS", "ASP.NET MVC"],
     },
     {
       company: "aSa",
@@ -85,12 +92,11 @@ const Home = () => {
       ],
       technologies: [
         "AngularJS",
-        "C#",
+        "C#/.NET",
         "Entity Framework",
         "SSRS",
         "SQL Server",
       ],
-      achievements: ["Global customer support", "100+ reports delivered"],
     },
   ];
 
@@ -108,7 +114,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Experience Section */}
-      <section className="section bg-slate-900/30">
+      <section id="experience" className="section bg-slate-900/30 scroll-mt-24">
         <div className="container">
           <div className="text-center mb-20">
             <h2 className="text-5xl md:text-6xl font-bold mb-8">
@@ -123,43 +129,60 @@ const Home = () => {
             {workExperience.map((experience, index) => (
               <div
                 key={experience.company}
-                className={`card hover-lift transition-all duration-1000 ${
+                className={`card hover-lift relative overflow-hidden transition-all duration-1000 ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-10"
                 }`}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
-                  <div className="flex items-center space-x-6 mb-6 lg:mb-0">
-                    <div className="w-20 h-20 bg-slate-700/50 rounded-xl flex items-center justify-center">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500" />
+
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center mb-6">
+                  <div className="flex items-center gap-6">
+                    <div className="w-20 h-20 md:w-28 md:h-28 bg-slate-700/50 rounded-xl flex items-center justify-center">
                       <img
                         src={experience.logo}
                         alt={`${experience.company} logo`}
-                        className="w-14 h-14 object-contain"
+                        className="w-18 h-18 md:w-24 md:h-24 object-contain"
                       />
                     </div>
                     <div>
-                      <h3 className="text-3xl font-bold text-white mb-2">
+                      <h3 className="text-3xl font-bold text-white mb-1">
                         {experience.company}
                       </h3>
-                      <p className="text-blue-400 font-semibold text-lg mb-1">
+                      <p className="text-blue-400 font-semibold text-lg">
                         {experience.position}
                       </p>
-                      <p className="text-slate-400">{experience.location}</p>
+                      <div className="mt-1 flex flex-wrap items-center gap-2">
+                        <span className="px-2.5 py-1 text-xs rounded-full bg-slate-700/60 border border-slate-600/50 text-slate-300">
+                          {experience.location}
+                        </span>
+                        {String(experience.time)
+                          .toLowerCase()
+                          .includes("present") && (
+                          <span className="px-2.5 py-1 text-xs rounded-full bg-green-500/20 text-green-300 border border-green-500/30">
+                            Current
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
-                  <div className="text-right">
-                    <p className="text-slate-300 font-medium text-lg">
-                      {experience.time}
-                    </p>
-                    <p className="text-slate-400 text-sm">
-                      {experience.timeSummary}
-                    </p>
+                  <div className="lg:col-span-2 lg:text-right">
+                    <div className="flex lg:justify-end gap-2 mb-1">
+                      <span className="px-3 py-1 text-xs rounded-md bg-slate-700/60 border border-slate-600/50 text-slate-300">
+                        {experience.time}
+                      </span>
+                      {experience.timeSummary && (
+                        <span className="px-3 py-1 text-xs rounded-md bg-slate-700/60 border border-slate-600/50 text-slate-300">
+                          {experience.timeSummary}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
 
-                <div className="mb-8">
+                <div className="mb-6">
                   <ul className="space-y-3">
                     {experience.content.map((item, idx) => (
                       <li key={idx} className="flex items-start space-x-3">
@@ -172,30 +195,11 @@ const Home = () => {
                   </ul>
                 </div>
 
-                {/* Achievements */}
-                {false && experience.achievements && (
-                  <div className="mb-8">
-                    <h4 className="text-sm font-semibold text-blue-400 mb-4">
-                      Key Achievements
-                    </h4>
-                    <div className="flex flex-wrap gap-3">
-                      {experience.achievements.map((achievement) => (
-                        <span
-                          key={achievement}
-                          className="px-4 py-2 bg-blue-500/20 border border-blue-500/30 text-blue-300 text-sm rounded-full"
-                        >
-                          {achievement}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2">
                   {experience.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-4 py-2 bg-slate-700/50 text-slate-300 text-sm rounded-full border border-slate-600/50"
+                      className="px-3 py-1 bg-slate-700/50 text-slate-200 text-xs md:text-sm rounded-full border border-slate-600/50"
                     >
                       {tech}
                     </span>
@@ -217,37 +221,77 @@ const Home = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="card hover-lift">
-              <div className="flex items-center space-x-8 mb-8">
-                <div className="w-24 h-24 bg-slate-700/50 rounded-xl flex items-center justify-center">
-                  <img
-                    src={education.logo}
-                    alt={`${education.school} logo`}
-                    className="w-20 h-20 object-contain"
-                  />
+            <div className="card hover-lift relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500" />
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mb-6">
+                <div className="flex justify-center md:justify-start">
+                  <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-2xl bg-slate-700/50 flex items-center justify-center">
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10" />
+                    <img
+                      src={education.logo}
+                      alt={`${education.school} logo`}
+                      className="relative w-20 h-20 md:w-24 md:h-24 object-contain"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-3xl font-bold text-white mb-2">
+                <div className="md:col-span-2">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="px-3 py-1 text-xs font-semibold rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30">
+                      Alma Mater
+                    </span>
+                  </div>
+                  <h3 className="text-3xl font-bold text-white mb-1">
                     {education.school}
                   </h3>
-                  <p className="text-blue-400 font-semibold text-lg mb-1">
+                  <p className="text-blue-400 font-semibold text-lg">
                     {education.position}
                   </p>
-                  <p className="text-slate-400">{education.location}</p>
+                  <p className="text-slate-400 mt-1">{education.location}</p>
                 </div>
               </div>
 
-              <div>
-                <ul className="space-y-3">
-                  {education.content.map((item, idx) => (
-                    <li key={idx} className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-slate-300 leading-relaxed">
-                        {item}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+              {/* Key Courses */}
+              <div className="mt-4">
+                {(() => {
+                  const raw = education.content?.[0] || "";
+                  const cleaned = raw
+                    .replace(/^Courses taken include\s*/i, "")
+                    .replace(/\.$/, "");
+                  const parts = cleaned
+                    .split(/,| and /)
+                    .map((s) => s.trim())
+                    .filter(Boolean)
+                    .slice(0, 12);
+                  return parts.length ? (
+                    <div>
+                      <p className="text-slate-300 mb-3 font-medium">
+                        Relevant coursework
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {parts.map((c) => (
+                          <span
+                            key={c}
+                            className="px-3 py-1 bg-slate-700/50 text-slate-200 text-xs md:text-sm rounded-full border border-slate-600/50"
+                          >
+                            {c}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <ul className="space-y-3">
+                      {education.content.map((item, idx) => (
+                        <li key={idx} className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-slate-300 leading-relaxed">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  );
+                })()}
               </div>
             </div>
           </div>
