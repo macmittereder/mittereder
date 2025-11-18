@@ -11,21 +11,21 @@
   },
   "dependencies": {
     "moment": "^2.30.1",
-    "next": "^14.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-ga4": "^2.1.0",
-    "react-moment": "^1.1.3"
+    "next": "^16.0.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-ga4": "^2.1.0"
   },
   "devDependencies": {
-    "@playwright/test": "^1.44.0",
-    "@types/node": "^24.3.0",
-    "@types/react": "^19.1.12",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^8.0.0",
-    "eslint-config-next": "^14.0.0",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.3"
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.6",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.0.3",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18",
+    "typescript": "^5.9.3"
   },
   "engines": {
     "node": "22.x"
