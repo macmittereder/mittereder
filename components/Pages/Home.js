@@ -12,7 +12,7 @@ const Home = () => {
 
   const currentJobTime = () => {
     var start = moment([2024, 3]);
-    var end = moment([moment().year(), moment().month() + 2]);
+    var end = moment([moment().year(), moment().month()]);
 
     var months = moment.duration(end.diff(start)).months();
     var years = moment.duration(end.diff(start)).years();
@@ -48,6 +48,10 @@ const Home = () => {
         "Vault",
         "Playwright",
         "SQL Server (SSMS)",
+        "LLM",
+        "RAG",
+        "VertexAI",
+        "LangGraph",
       ],
     },
     {
@@ -140,11 +144,11 @@ const Home = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center mb-6">
                   <div className="flex items-center gap-6">
-                    <div className="w-20 h-20 md:w-28 md:h-28 bg-slate-700/50 rounded-xl flex items-center justify-center">
+                    <div className="w-24 h-24 md:w-32 md:h-32 bg-slate-700/50 rounded-xl flex items-center justify-center">
                       <img
                         src={experience.logo}
                         alt={`${experience.company} logo`}
-                        className="w-18 h-18 md:w-24 md:h-24 object-contain"
+                        className="w-20 h-20 md:w-28 md:h-28 object-contain"
                       />
                     </div>
                     <div>

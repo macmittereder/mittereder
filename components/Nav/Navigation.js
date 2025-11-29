@@ -50,7 +50,7 @@ const Navigation = () => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-all duration-300 hover:text-blue-400 relative ${
+                className={`text-lg font-medium transition-all duration-300 hover:text-blue-400 relative ${
                   pathname === item.href ? "text-blue-400" : "text-slate-300"
                 }`}
               >
@@ -62,16 +62,8 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Desktop CTA and Social Links */}
+          {/* Desktop Social Links */}
           <div className="hidden md:flex items-center space-x-4">
-            <a
-              href="https://www.linkedin.com/in/mackenzie-mittereder/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105"
-            >
-              LinkedIn
-            </a>
             <div className="flex items-center space-x-2">
               <a
                 href="https://github.com/macmittereder"
@@ -156,15 +148,6 @@ const Navigation = () => {
 
               {/* Mobile CTA */}
               <div className="pt-4 border-t border-slate-700">
-                <a
-                  href="https://www.linkedin.com/in/mackenzie-mittereder/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-all duration-300 text-center"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  LinkedIn
-                </a>
               </div>
 
               {/* Mobile Social Links */}

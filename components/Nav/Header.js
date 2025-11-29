@@ -86,38 +86,46 @@ const Header = () => {
                   <span className="text-base md:text-lg font-semibold text-slate-200">
                     Currently at
                   </span>
-                  <Image
-                    src="/images/webstaurantstore-logo.png"
-                    width={360}
-                    height={80}
-                    alt="WebstaurantStore"
-                    className="h-10 sm:h-14 md:h-20 lg:h-24 w-auto opacity-95 hover:opacity-100 transition-opacity"
-                    priority
-                  />
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-slate-600/30">
+                    <Image
+                      src="/images/webstaurantstore-logo.png"
+                      width={360}
+                      height={80}
+                      alt="WebstaurantStore"
+                      className="w-48 sm:w-64 md:w-80 lg:w-96 h-auto opacity-95 hover:opacity-100 transition-opacity"
+                      priority
+                    />
+                  </div>
                 </div>
                 <div className="flex flex-wrap items-center gap-3 md:gap-4">
                   <span className="text-sm text-slate-400">Previously at</span>
-                  <Image
-                    src="/images/lexicon-logo.png"
-                    width={90}
-                    height={24}
-                    alt="Lexicon"
-                    className="h-5 sm:h-6 md:h-7 w-auto opacity-70 hover:opacity-100 transition-opacity"
-                  />
-                  <Image
-                    src="/images/dollar-bank-logo.png"
-                    width={90}
-                    height={24}
-                    alt="Dollar Bank"
-                    className="h-5 sm:h-6 md:h-7 w-auto opacity-70 hover:opacity-100 transition-opacity"
-                  />
-                  <Image
-                    src="/images/aSa-logo.png"
-                    width={60}
-                    height={24}
-                    alt="aSa"
-                    className="h-5 sm:h-6 md:h-7 w-auto opacity-70 hover:opacity-100 transition-opacity"
-                  />
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-slate-600/30">
+                    <Image
+                      src="/images/lexicon-logo.png"
+                      width={90}
+                      height={24}
+                      alt="Lexicon"
+                      className="h-7 sm:h-8 md:h-10 w-auto opacity-90 hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-slate-600/30">
+                    <Image
+                      src="/images/dollar-bank-logo.png"
+                      width={90}
+                      height={24}
+                      alt="Dollar Bank"
+                      className="h-7 sm:h-8 md:h-10 w-auto opacity-90 hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                  <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-slate-600/30">
+                    <Image
+                      src="/images/aSa-logo.png"
+                      width={60}
+                      height={24}
+                      alt="aSa"
+                      className="h-7 sm:h-8 md:h-10 w-auto opacity-90 hover:opacity-100 transition-opacity"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
