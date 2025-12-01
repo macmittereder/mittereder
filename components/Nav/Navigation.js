@@ -8,6 +8,7 @@ import Image from "next/image";
 const Navigation = () => {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -19,9 +20,59 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const experienceEl = document.getElementById("experience");
+    if (!experienceEl) return;
+
+    const updateActive = () => {
+      const rect = experienceEl.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const visible = rect.top < vh * 0.7 && rect.bottom > vh * 0.3;
+      if (visible) {
+        setActiveSection("experience");
+      } else if (window.scrollY < 200) {
+        setActiveSection("home");
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection("experience");
+          } else if (window.scrollY < 200) {
+            setActiveSection("home");
+          }
+        });
+      },
+      { threshold: 0.3, rootMargin: "-10% 0px -10% 0px" }
+    );
+
+    observer.observe(experienceEl);
+    updateActive();
+
+    let ticking = false;
+    const onScrollActive = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateActive();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScrollActive);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScrollActive);
+    };
+  }, []);
+
   const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/#experience", label: "Experience" },
+    { href: "/", label: "Home", id: "home" },
+    { href: "/#experience", label: "Experience", id: "experience" },
   ];
 
   return (
@@ -32,7 +83,7 @@ const Navigation = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
@@ -51,11 +102,18 @@ const Navigation = () => {
                 key={item.href}
                 href={item.href}
                 className={`text-lg font-medium transition-all duration-300 hover:text-blue-400 relative ${
-                  pathname === item.href ? "text-blue-400" : "text-slate-300"
+                  activeSection === item.id ? "text-blue-400" : "text-slate-300"
                 }`}
+                onClick={() => {
+                  if (item.id === "experience") {
+                    document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" });
+                  } else {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }
+                }}
               >
                 {item.label}
-                {pathname === item.href && (
+                {activeSection === item.id && (
                   <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-400 rounded-full"></div>
                 )}
               </Link>
@@ -136,14 +194,14 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.href}
-                  href={item.href}
-                  className={`text-sm font-medium transition-all duration-300 hover:text-blue-400 py-2 ${
-                    pathname === item.href ? "text-blue-400" : "text-slate-300"
+                href={item.href}
+                className={`text-sm font-medium transition-all duration-300 hover:text-blue-400 py-2 ${
+                    activeSection === item.id ? "text-blue-400" : "text-slate-300"
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
               ))}
 
               {/* Mobile CTA */}
