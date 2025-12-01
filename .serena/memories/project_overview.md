@@ -1,0 +1,5 @@
+- Purpose: Portfolio website for Mackenzie Mittereder showcasing work experience, education, and projects.
+- Stack: Next.js 14 App Router, React 18/19, Tailwind CSS, Moment.js, React GA4; TypeScript tooling present though many files are JS. Node 22.x engine.
+- Layout: App Router under app/ (layout.js, page.js, globals.css) with projects/ routes; components/ split into Card, Footer, Nav, Pages, Tile; static assets in public/ images.
+- Key packages: next, react, react-dom, moment, react-ga4; tooling: eslint, eslint-config-next, tailwindcss, postcss, typescript, @playwright/test.
+- Platform: Windows dev environment.

@@ -1,0 +1,7 @@
+- Install deps: `npm install`
+- Dev server: `npm run dev`
+- Production build: `npm run build`
+- Start production server: `npm run start`
+- Lint: `npm run lint`
+- Static export: `npm run export`
+- Useful PowerShell: `Get-ChildItem` (ls), `Get-Content <file>` (cat), `pwd`, `npm run <script>`.

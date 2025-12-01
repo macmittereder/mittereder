@@ -17,7 +17,7 @@ const Home = () => {
     var months = moment.duration(end.diff(start)).months();
     var years = moment.duration(end.diff(start)).years();
 
-    return `(${years > 0 ? years + (years > 1 ? " yrs" : " yr") : ""}${
+    return `(${years > 0 ? years + (years > 1 ? " yrs " : " yr ") : ""}${
       months > 0 ? months + (months > 1 ? " mos" : " mo") : ""
     })`;
   };
@@ -144,11 +144,14 @@ const Home = () => {
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center mb-6">
                   <div className="flex items-center gap-6">
-                    <div className="w-24 h-24 md:w-32 md:h-32 bg-slate-700/50 rounded-xl flex items-center justify-center">
+                    <div
+                      className="bg-slate-800 border border-slate-600 shadow-lg rounded-xl flex items-center justify-center px-5 py-4 min-h-20 md:min-h-24"
+                      style={{ width: "220px", minWidth: "220px", maxWidth: "260px" }}
+                    >
                       <img
                         src={experience.logo}
                         alt={`${experience.company} logo`}
-                        className="w-20 h-20 md:w-28 md:h-28 object-contain"
+                        className="w-full h-auto max-h-32 md:max-h-36 object-contain drop-shadow"
                       />
                     </div>
                     <div>
@@ -240,11 +243,6 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="md:col-span-2">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="px-3 py-1 text-xs font-semibold rounded-full bg-blue-500/20 text-blue-300 border border-blue-400/30">
-                      Alma Mater
-                    </span>
-                  </div>
                   <h3 className="text-3xl font-bold text-white mb-1">
                     {education.school}
                   </h3>

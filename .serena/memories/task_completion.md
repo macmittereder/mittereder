@@ -1,0 +1,4 @@
+- Run `npm run lint` to catch issues; optionally `npm run build` to ensure Next.js build passes.
+- If UI changes: verify in dev server at http://localhost:3000 across desktop/mobile.
+- Ensure assets placed in public/ and imported correctly (Next Image friendly).
+- Summarize changes and any follow-up steps.

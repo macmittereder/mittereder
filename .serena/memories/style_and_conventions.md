@@ -1,0 +1,5 @@
+- Uses Next.js App Router with React function components; JSX/JS files alongside TypeScript config.
+- Tailwind CSS for styling; globals in app/globals.css.
+- Likely follows Next lint defaults (eslint-config-next).
+- Images served from public/; uses Next image conventions per README conversion notes.
+- Keep components modular under components/ (Nav, Pages, Projects, Tile, Card).

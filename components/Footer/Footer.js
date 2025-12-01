@@ -14,7 +14,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Full-stack software engineer with 6+ years of experience building
+              Full-stack software engineer with 11+ years of experience building
               scalable applications and innovative digital solutions.
             </p>
           </div>
