@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Footer = () => {
   return (
     <footer className="bg-slate-900 border-t border-slate-800">
@@ -23,12 +25,12 @@ const Footer = () => {
           <div className="text-center">
             <h3 className="text-white font-semibold mb-4">Navigation</h3>
             <div className="space-y-2">
-              <a
+              <Link
                 href="/"
                 className="block text-slate-400 hover:text-blue-400 transition-colors text-sm"
               >
                 Home
-              </a>
+              </Link>
             </div>
           </div>
 

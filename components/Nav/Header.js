@@ -35,7 +35,7 @@ const Header = () => {
               </h1>
 
               <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-8">
-                I'm{" "}
+                I&apos;m{" "}
                 <span className="font-semibold text-white">
                   Mackenzie Mittereder
                 </span>

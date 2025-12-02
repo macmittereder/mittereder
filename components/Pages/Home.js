@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import moment from "moment";
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,11 +10,17 @@ const Home = () => {
   }, []);
 
   const currentJobTime = () => {
-    var start = moment([2024, 3]);
-    var end = moment([moment().year(), moment().month()]);
+    const startDate = new Date(2024, 3, 1);
+    const now = new Date();
 
-    var months = moment.duration(end.diff(start)).months();
-    var years = moment.duration(end.diff(start)).years();
+    const totalMonths = Math.max(
+      (now.getFullYear() - startDate.getFullYear()) * 12 +
+        (now.getMonth() - startDate.getMonth()),
+      0
+    );
+
+    const years = Math.floor(totalMonths / 12);
+    const months = totalMonths % 12;
 
     return `(${years > 0 ? years + (years > 1 ? " yrs " : " yr ") : ""}${
       months > 0 ? months + (months > 1 ? " mos" : " mo") : ""
