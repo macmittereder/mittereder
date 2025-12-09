@@ -1,6 +1,5 @@
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
-import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata = {
   title: "Mackenzie Mittereder - Software Engineer",
@@ -23,7 +22,6 @@ export default function RootLayout({ children }) {
       <body>
         {children}
         <Analytics />
-        <GoogleAnalytics gaId="G-3QVK5N1Q3E" />
       </body>
     </html>
   );

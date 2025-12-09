@@ -11,87 +11,78 @@ const Header = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Animated background elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="hidden md:block absolute top-40 left-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob"></div>
+        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-purple-600/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-32 left-1/3 w-[500px] h-[500px] bg-cyan-600/20 rounded-full mix-blend-screen filter blur-[100px] animate-blob animation-delay-4000"></div>
+        <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
       </div>
 
-      <div className="relative mx-auto w-full max-w-6xl px-4 pt-28 pb-16 md:pt-32 md:pb-24">
-        <div
-          className={`transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-        >
-          <div className="grid grid-cols-1 gap-12 items-center">
-            {/* Left: Headline, subtext, CTAs, social proof */}
-            <div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4">
-                Building fast, reliable
-                <br className="hidden sm:block" />
-                <span className="gradient-text"> web apps</span> that scale
-              </h1>
+      <div className="relative container-custom w-full z-10">
+        <div className="flex flex-col items-center text-center">
+          <div
+            className={`transition-all duration-1000 ease-out transform ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
 
-              <p className="text-lg md:text-xl text-slate-300 max-w-2xl mb-8">
-                I&apos;m{" "}
-                <span className="font-semibold text-white">
-                  Mackenzie Mittereder
-                </span>
-                , a full‑stack software engineer focused on shipping elegant,
-                production‑ready experiences with Next.js, React, TypeScript,
-                and Node.
-              </p>
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight mb-8 text-white">
+              Building <span className="gradient-text">digital</span>
+              <br />
+              <span className="gradient-text">experiences</span> that matter.
+            </h1>
 
-              <div className="mb-8" />
+            <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+              I&apos;m <span className="text-white font-semibold">Mackenzie Mittereder</span>, 
+              a full-stack engineer crafting high-performance web applications with 
+              Next.js, React, and modern cloud architecture.
+            </p>
 
-              <div className="flex flex-col gap-3 opacity-90">
-                <div className="flex items-center gap-3 md:gap-5">
-                  <span className="text-base md:text-lg font-semibold text-slate-200">
-                    Currently at
-                  </span>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-slate-600/30">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+              <a href="#experience" className="btn-primary w-full sm:w-auto group">
+                View Work
+                <svg className="w-4 h-4 ml-2 group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </a>
+              <a href="https://github.com/macmittereder" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full sm:w-auto">
+                Check GitHub
+              </a>
+            </div>
+
+            {/* Social Proof / Current Status */}
+            <div className="border-t border-white/5 pt-10">
+              <p className="text-sm text-slate-500 mb-6 font-medium uppercase tracking-wider">Trusted by industry leaders</p>
+              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                 <div className="h-8 md:h-10 w-auto relative flex items-center justify-center">
                     <Image
                       src="/images/webstaurantstore-logo.png"
-                      width={360}
-                      height={80}
+                      width={200}
+                      height={50}
                       alt="WebstaurantStore"
-                      className="w-48 sm:w-64 md:w-80 lg:w-96 h-auto opacity-95 hover:opacity-100 transition-opacity"
-                      priority
+                      className="h-full w-auto object-contain brightness-200 contrast-0 hover:brightness-100 hover:contrast-100 transition-all"
                     />
-                  </div>
-                </div>
-                <div className="flex flex-wrap items-center gap-3 md:gap-4">
-                  <span className="text-sm text-slate-400">Previously at</span>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-slate-600/30">
+                 </div>
+                 <div className="h-6 md:h-8 w-auto relative flex items-center justify-center">
                     <Image
                       src="/images/lexicon-logo.png"
-                      width={90}
-                      height={24}
+                      width={120}
+                      height={40}
                       alt="Lexicon"
-                      className="h-7 sm:h-8 md:h-10 w-auto opacity-90 hover:opacity-100 transition-opacity"
+                      className="h-full w-auto object-contain brightness-200 contrast-0 hover:brightness-100 hover:contrast-100 transition-all"
                     />
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-slate-600/30">
+                 </div>
+                 <div className="h-6 md:h-8 w-auto relative flex items-center justify-center">
                     <Image
                       src="/images/dollar-bank-logo.png"
-                      width={90}
-                      height={24}
+                      width={120}
+                      height={40}
                       alt="Dollar Bank"
-                      className="h-7 sm:h-8 md:h-10 w-auto opacity-90 hover:opacity-100 transition-opacity"
+                      className="h-full w-auto object-contain brightness-200 contrast-0 hover:brightness-100 hover:contrast-100 transition-all"
                     />
-                  </div>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2 border border-slate-600/30">
-                    <Image
-                      src="/images/aSa-logo.png"
-                      width={60}
-                      height={24}
-                      alt="aSa"
-                      className="h-7 sm:h-8 md:h-10 w-auto opacity-90 hover:opacity-100 transition-opacity"
-                    />
-                  </div>
-                </div>
+                 </div>
               </div>
             </div>
           </div>
