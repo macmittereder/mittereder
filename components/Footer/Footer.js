@@ -67,20 +67,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="text-white font-bold mb-6">Get in Touch</h3>
-            <p className="text-slate-400 mb-4">
-              Open to new opportunities and interesting projects.
-            </p>
-            <a 
-              href="mailto:macmittereder@gmail.com"
-              className="text-blue-400 hover:text-blue-300 transition-colors font-medium"
-            >
-              Contact Me &rarr;
-            </a>
-          </div>
+          
         </div>
 
         <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
