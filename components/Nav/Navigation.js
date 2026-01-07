@@ -18,34 +18,46 @@ const Navigation = () => {
   }, []);
 
   useEffect(() => {
-    const experienceEl = document.getElementById("experience");
-    if (!experienceEl) return;
-
     const updateActive = () => {
-      const rect = experienceEl.getBoundingClientRect();
-      const vh = window.innerHeight;
-      const visible = rect.top < vh * 0.7 && rect.bottom > vh * 0.3;
-      if (visible) {
-        setActiveSection("experience");
-      } else if (window.scrollY < 200) {
+      const scrollY = window.scrollY;
+      const experienceEl = document.getElementById("experience");
+      const educationEl = document.getElementById("education");
+
+      if (scrollY < 200) {
         setActiveSection("home");
+        return;
       }
+
+      const sections = [];
+
+      if (experienceEl) {
+        sections.push({
+          id: "experience",
+          top: experienceEl.offsetTop,
+          bottom: experienceEl.offsetTop + experienceEl.offsetHeight,
+        });
+      }
+
+      if (educationEl) {
+        sections.push({
+          id: "education",
+          top: educationEl.offsetTop,
+          bottom: educationEl.offsetTop + educationEl.offsetHeight,
+        });
+      }
+
+      const scrollPosition = scrollY + 150;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (scrollPosition >= sections[i].top) {
+          setActiveSection(sections[i].id);
+          return;
+        }
+      }
+
+      setActiveSection("home");
     };
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection("experience");
-          } else if (window.scrollY < 200) {
-            setActiveSection("home");
-          }
-        });
-      },
-      { threshold: 0.3, rootMargin: "-10% 0px -10% 0px" }
-    );
-
-    observer.observe(experienceEl);
     updateActive();
 
     let ticking = false;
@@ -60,16 +72,18 @@ const Navigation = () => {
     };
 
     window.addEventListener("scroll", onScrollActive);
+    window.addEventListener("resize", updateActive);
 
     return () => {
-      observer.disconnect();
       window.removeEventListener("scroll", onScrollActive);
+      window.removeEventListener("resize", updateActive);
     };
   }, []);
 
   const navItems = [
     { href: "/", label: "Home", id: "home" },
     { href: "/#experience", label: "Experience", id: "experience" },
+    { href: "/#education", label: "Education", id: "education" },
   ];
 
   return (
@@ -109,8 +123,8 @@ const Navigation = () => {
                       : "text-slate-400 hover:text-white hover:bg-white/5"
                   }`}
                   onClick={() => {
-                    if (item.id === "experience") {
-                      document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" });
+                    if (item.id === "experience" || item.id === "education") {
+                      document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
                     } else {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }

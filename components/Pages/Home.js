@@ -10,7 +10,7 @@ const Home = () => {
   }, []);
 
   const currentJobTime = () => {
-    const startDate = new Date(2024, 3, 1);
+    const startDate = new Date(2024, 2, 1); // March 2024 (month is 0-indexed)
     const now = new Date();
 
     const totalMonths = Math.max(
@@ -32,15 +32,28 @@ const Home = () => {
       company: "WebstaurantStore",
       logo: "/images/webstaurantstore-logo.png",
       location: "Remote",
-      position: "Software Engineer III",
-      time: "March 2024 - Present",
-      timeSummary: currentJobTime(),
-      content: [
-        "Promoted to Software Engineer III in recognition of technical leadership and contributions to team success",
-        "Developed internal tools and applications to streamline customer relations workflows and improve team productivity",
-        "Collaborated with cross-functional teams to design and implement scalable solutions using modern web technologies",
-        "Mentored peers and conducted code reviews to maintain high code quality standards",
-        "Maintained 80%+ code coverage on pull requests with comprehensive unit and integration tests; added Playwright end-to-end coverage where appropriate",
+      totalTime: "March 2024 - Present",
+      totalTimeSummary: currentJobTime(),
+      positions: [
+        {
+          title: "Software Engineer III",
+          time: "January 2026 - Present",
+          duration: "1 mo",
+          content: [
+            "Promoted to Software Engineer III in recognition of technical leadership and contributions to team success",
+          ],
+        },
+        {
+          title: "Software Engineer II",
+          time: "March 2024 - January 2026",
+          duration: "1 yr 10 mos",
+          content: [
+            "Developed internal tools and applications to streamline customer relations workflows and improve team productivity",
+            "Collaborated with cross-functional teams to design and implement scalable solutions using modern web technologies",
+            "Mentored peers and conducted code reviews to maintain high code quality standards",
+            "Maintained nearly 100% code coverage on pull requests with comprehensive unit and integration tests; added Playwright end-to-end coverage where appropriate",
+          ],
+        },
       ],
       technologies: [
         "React",
@@ -158,6 +171,7 @@ const Home = () => {
 
                 {/* Card */}
                 <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 md:p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-900/10 backdrop-blur-sm group-hover:-translate-y-1">
+                  {/* Company Header */}
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-lg bg-white/5 p-2 flex items-center justify-center border border-white/10">
@@ -171,26 +185,62 @@ const Home = () => {
                         <h3 className="text-xl md:text-2xl font-bold text-white">
                           {experience.company}
                         </h3>
-                        <p className="text-blue-400 font-medium">
-                          {experience.position}
-                        </p>
+                        {experience.positions ? (
+                          <p className="text-slate-400 text-sm">
+                            {experience.totalTime} {experience.totalTimeSummary}
+                          </p>
+                        ) : (
+                          <p className="text-blue-400 font-medium">
+                            {experience.position}
+                          </p>
+                        )}
                       </div>
                     </div>
-                    <div className="text-right">
-                      <span className="inline-block px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700">
-                        {experience.time}
-                      </span>
-                    </div>
+                    {!experience.positions && (
+                      <div className="text-right">
+                        <span className="inline-block px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-medium border border-slate-700">
+                          {experience.time}
+                        </span>
+                      </div>
+                    )}
                   </div>
 
-                  <ul className="space-y-3 mb-6">
-                    {experience.content.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-slate-300 text-sm md:text-base leading-relaxed">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Multiple Positions or Single Position */}
+                  {experience.positions ? (
+                    <div className="space-y-6 mb-6">
+                      {experience.positions.map((position, posIdx) => (
+                        <div key={posIdx} className="relative pl-4 border-l-2 border-slate-700">
+                          <div className="mb-3">
+                            <div className="flex items-center justify-between gap-4 flex-wrap">
+                              <h4 className="text-lg font-semibold text-blue-400">
+                                {position.title}
+                              </h4>
+                              <span className="text-xs text-slate-400">
+                                {position.time} · {position.duration}
+                              </span>
+                            </div>
+                          </div>
+                          <ul className="space-y-2">
+                            {position.content.map((item, idx) => (
+                              <li key={idx} className="flex items-start gap-3 text-slate-300 text-sm leading-relaxed">
+                                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <ul className="space-y-3 mb-6">
+                      {experience.content.map((item, idx) => (
+                        <li key={idx} className="flex items-start gap-3 text-slate-300 text-sm md:text-base leading-relaxed">
+                          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
 
                   <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-800/50">
                     {experience.technologies.map((tech) => (
@@ -210,7 +260,7 @@ const Home = () => {
       </section>
 
       {/* Education Section */}
-      <section className="section">
+      <section id="education" className="section scroll-mt-24">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold mb-6">

@@ -37,7 +37,7 @@ const Header = () => {
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
               I&apos;m <span className="text-white font-semibold">Mackenzie Mittereder</span>, 
               a full-stack engineer crafting high-performance web applications with 
-              Next.js, React, and modern cloud architecture.
+              React, .Net, and modern cloud architecture.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">

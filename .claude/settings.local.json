@@ -5,7 +5,8 @@
       "Bash(npx playwright:*)",
       "Bash(npm install:*)",
       "Bash(netstat:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "mcp__playwright__*"
     ],
     "deny": [],
     "ask": []
