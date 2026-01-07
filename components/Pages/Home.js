@@ -32,10 +32,11 @@ const Home = () => {
       company: "WebstaurantStore",
       logo: "/images/webstaurantstore-logo.png",
       location: "Remote",
-      position: "Software Engineer II",
+      position: "Software Engineer III",
       time: "March 2024 - Present",
       timeSummary: currentJobTime(),
       content: [
+        "Promoted to Software Engineer III in recognition of technical leadership and contributions to team success",
         "Developed internal tools and applications to streamline customer relations workflows and improve team productivity",
         "Collaborated with cross-functional teams to design and implement scalable solutions using modern web technologies",
         "Mentored peers and conducted code reviews to maintain high code quality standards",
