@@ -23,3 +23,6 @@
 .env.test.local
 .env.production.local
 .cache
+
+# Serena MCP (machine-specific, do not commit)
+.serena/
