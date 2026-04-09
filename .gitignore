@@ -26,3 +26,4 @@
 
 # Serena MCP (machine-specific, do not commit)
 .serena/
+.vercel
