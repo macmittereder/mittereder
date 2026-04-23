@@ -9,23 +9,22 @@ const Home = () => {
     setIsVisible(true);
   }, []);
 
-  const currentJobTime = () => {
-    const startDate = new Date(2024, 2, 1); // March 2024 (month is 0-indexed)
-    const now = new Date();
-
+  const formatDuration = (startDate, endDate = new Date()) => {
     const totalMonths = Math.max(
-      (now.getFullYear() - startDate.getFullYear()) * 12 +
-        (now.getMonth() - startDate.getMonth()),
+      (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+        (endDate.getMonth() - startDate.getMonth()),
       0
     );
 
     const years = Math.floor(totalMonths / 12);
     const months = totalMonths % 12;
 
-    return `(${years > 0 ? years + (years > 1 ? " yrs " : " yr ") : ""}${
+    return `${years > 0 ? years + (years > 1 ? " yrs " : " yr ") : ""}${
       months > 0 ? months + (months > 1 ? " mos" : " mo") : ""
-    })`;
+    }`.trim() || "less than a month";
   };
+
+  const currentJobTime = () => `(${formatDuration(new Date(2024, 2, 1))})`;
 
   const workExperience = [
     {
@@ -38,7 +37,7 @@ const Home = () => {
         {
           title: "Software Engineer III",
           time: "January 2026 - Present",
-          duration: "1 mo",
+          duration: formatDuration(new Date(2026, 0, 1)),
           content: [
             "Promoted to Software Engineer III in recognition of technical leadership and contributions to team success",
           ],
@@ -46,7 +45,7 @@ const Home = () => {
         {
           title: "Software Engineer II",
           time: "March 2024 - January 2026",
-          duration: "1 yr 10 mos",
+          duration: formatDuration(new Date(2024, 2, 1), new Date(2026, 0, 1)),
           content: [
             "Developed internal tools and applications to streamline customer relations workflows and improve team productivity",
             "Collaborated with cross-functional teams to design and implement scalable solutions using modern web technologies",
