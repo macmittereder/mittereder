@@ -1,4 +1,3 @@
-"use client";
 import Background from "../components/Nav/Background";
 import Layout from "../components/Nav/Layout";
 import Header from "../components/Nav/Header";

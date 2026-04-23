@@ -6,13 +6,15 @@
       "Bash(npm install:*)",
       "Bash(netstat:*)",
       "Bash(findstr:*)",
-      "mcp__playwright__*"
+      "mcp__playwright__*",
+      "Bash(git checkout *)",
+      "Bash(git pull *)"
     ],
     "deny": [],
     "ask": []
   },
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "serena"
-  ],
-  "enableAllProjectMcpServers": true
+  ]
 }
