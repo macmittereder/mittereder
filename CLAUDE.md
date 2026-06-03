@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio website for Mackenzie Mittereder (Senior Software Engineer). Built with Next.js 16, React 19, Tailwind CSS 3, and TypeScript 5. Deployed on Vercel with static export support.
+Personal portfolio website for Mackenzie Mittereder (Senior Software Engineer). Built with Next.js 16, React 19, Tailwind CSS 3, and TypeScript tooling. Deployed on Vercel with static export support.
 
 ## Commands
 
@@ -31,7 +31,7 @@ Personal portfolio website for Mackenzie Mittereder (Senior Software Engineer). 
 
 **Styling**: Tailwind CSS utility classes + custom component classes in `app/globals.css` (glassmorphism, gradient text, buttons, scrollbar). Dark theme with slate-950 background and blue accent gradients. Custom animations defined in `tailwind.config.js` (blob, fade-in-up, fade-in, pulse-slow).
 
-**Analytics**: Vercel Analytics and Google Analytics 4, both wired in `app/layout.js`.
+**Analytics**: Vercel Analytics is wired in `app/layout.js`.
 
 ## Configuration Notes
 

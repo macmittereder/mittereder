@@ -12,15 +12,15 @@ This portfolio website has been converted from a React application to Next.js fo
 - **Projects Page**: Grid layout showcasing all projects with clickable cards
 - **Individual Project Pages**: Detailed pages for each project with screenshots and descriptions
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Google Analytics**: Integrated with React GA4 for tracking
+- **Vercel Analytics**: Integrated through `@vercel/analytics`
 
 ## Technologies Used
 
-- **Next.js 14**: React framework with App Router
-- **React 18**: Latest version with modern features
+- **Next.js 16**: React framework with App Router
+- **React 19**: Latest version with modern features
 - **Tailwind CSS**: Utility-first CSS framework
 - **Moment.js**: Date/time manipulation
-- **React GA4**: Google Analytics integration
+- **Vercel Analytics**: Web analytics integration
 
 ## Project Structure
 

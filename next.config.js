@@ -17,11 +17,11 @@ const nextConfig = {
 // Security Headers
 const ContentSecurityPolicy = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.google-analytics.com;
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' *.google-analytics.com https://va.vercel-scripts.com;
   style-src 'self' 'unsafe-inline' *.googleapis.com;
   img-src 'self' blob: data:;
-  font-src 'self';
-  connect-src 'self' https://*.google-analytics.com;
+  font-src 'self' https://fonts.gstatic.com;
+  connect-src 'self' https://*.google-analytics.com https://vitals.vercel-insights.com;
   frame-ancestors 'self';
   base-uri 'self';
   form-action 'self';

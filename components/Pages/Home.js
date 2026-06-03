@@ -133,10 +133,6 @@ const Home = () => {
     ],
   };
 
-  const allSkills = Array.from(
-    new Set(workExperience.flatMap((exp) => exp.technologies))
-  ).sort();
-
   return (
     <div className="min-h-screen pb-20">
       
