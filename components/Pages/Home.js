@@ -2,136 +2,136 @@
 
 import { useEffect, useState } from "react";
 
+const formatDuration = (startDate, endDate = new Date()) => {
+  const totalMonths = Math.max(
+    (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+      (endDate.getMonth() - startDate.getMonth()),
+    0
+  );
+
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+
+  return `${years > 0 ? years + (years > 1 ? " yrs " : " yr ") : ""}${
+    months > 0 ? months + (months > 1 ? " mos" : " mo") : ""
+  }`.trim() || "less than a month";
+};
+
+const currentJobTime = () => `(${formatDuration(new Date(2024, 2, 1))})`;
+
+const workExperience = [
+  {
+    company: "WebstaurantStore",
+    logo: "/images/webstaurantstore-logo.png",
+    location: "Remote",
+    totalTime: "March 2024 - Present",
+    totalTimeSummary: currentJobTime(),
+    positions: [
+      {
+        title: "Software Engineer III",
+        time: "January 2026 - Present",
+        duration: formatDuration(new Date(2026, 0, 1)),
+        content: [
+          "Promoted to Software Engineer III in recognition of technical leadership and contributions to team success",
+        ],
+      },
+      {
+        title: "Software Engineer II",
+        time: "March 2024 - January 2026",
+        duration: formatDuration(new Date(2024, 2, 1), new Date(2026, 0, 1)),
+        content: [
+          "Developed internal tools and applications to streamline customer relations workflows and improve team productivity",
+          "Collaborated with cross-functional teams to design and implement scalable solutions using modern web technologies",
+          "Mentored peers and conducted code reviews to maintain high code quality standards",
+          "Maintained nearly 100% code coverage on pull requests with comprehensive unit and integration tests; added Playwright end-to-end coverage where appropriate",
+        ],
+      },
+    ],
+    technologies: [
+      "React",
+      "C#/.NET",
+      "TypeScript",
+      "REST APIs",
+      "GraphQL",
+      "RabbitMQ",
+      "Kubernetes",
+      "Grafana",
+      "Vault",
+      "Playwright",
+      "SQL Server",
+      "LLM",
+      "RAG",
+      "VertexAI",
+      "LangGraph",
+    ],
+  },
+  {
+    company: "Lexicon",
+    logo: "/images/lexicon-logo.png",
+    location: "Remote",
+    position: "Full Stack Software Developer",
+    time: "March 2023 - March 2024",
+    timeSummary: " (1 yr)",
+    content: [
+      "Integrated new features in modern Angular applications and refactored legacy codebase for improved maintainability",
+      "Worked closely with QA and PMOs to design, build, and deliver software features with high user satisfaction",
+      "Implemented database optimizations and API improvements resulting in 30% faster response times",
+    ],
+    technologies: ["Angular", "C#/.NET", "SSMS", "REST APIs"],
+  },
+  {
+    company: "Dollar Bank",
+    logo: "/images/dollar-bank-logo.png",
+    location: "Pittsburgh, PA",
+    position: "Senior Application Developer",
+    time: "August 2021 - March 2023",
+    timeSummary: " (1 yr 8 mos)",
+    content: [
+      "Developed enterprise .NET applications from console applications to web services serving thousands of users",
+      "Led the migration of legacy ASP.NET web pages to modern .NET MVC architecture",
+      "Built and maintained SSIS packages for critical data migration and synchronization between systems",
+    ],
+    technologies: ["Razor", "C#/.NET", "SQL Server", "SSIS", "ASP.NET MVC"],
+  },
+  {
+    company: "aSa",
+    logo: "/images/aSa-logo.png",
+    location: "Murrysville, PA",
+    position: "Software Developer II",
+    time: "May 2018 - August 2021",
+    timeSummary: " (3 yrs 4 mos)",
+    content: [
+      "Led development across Processing and Inventory Tracking teams, implementing critical features using AngularJS and Entity Framework",
+      "Provided global customer support and resolved production issues across multiple time zones",
+      "Designed and developed SSRS reports used daily by customers worldwide for business operations",
+    ],
+    technologies: [
+      "AngularJS",
+      "C#/.NET",
+      "Entity Framework",
+      "SSRS",
+      "SQL Server",
+    ],
+  },
+];
+
+const education = {
+  school: "Saint Vincent College",
+  logo: "/images/svc-logo.png",
+  location: "Latrobe, PA",
+  position: "BS - Computing and Information Science",
+  time: "",
+  content: [
+    "Courses taken include Server Side Programming, Database Concepts and Information Structures, Software Engineering, Discrete Mathematics, Computer Architecture and Operating Systems and Website Design.",
+  ],
+};
+
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-  const formatDuration = (startDate, endDate = new Date()) => {
-    const totalMonths = Math.max(
-      (endDate.getFullYear() - startDate.getFullYear()) * 12 +
-        (endDate.getMonth() - startDate.getMonth()),
-      0
-    );
-
-    const years = Math.floor(totalMonths / 12);
-    const months = totalMonths % 12;
-
-    return `${years > 0 ? years + (years > 1 ? " yrs " : " yr ") : ""}${
-      months > 0 ? months + (months > 1 ? " mos" : " mo") : ""
-    }`.trim() || "less than a month";
-  };
-
-  const currentJobTime = () => `(${formatDuration(new Date(2024, 2, 1))})`;
-
-  const workExperience = [
-    {
-      company: "WebstaurantStore",
-      logo: "/images/webstaurantstore-logo.png",
-      location: "Remote",
-      totalTime: "March 2024 - Present",
-      totalTimeSummary: currentJobTime(),
-      positions: [
-        {
-          title: "Software Engineer III",
-          time: "January 2026 - Present",
-          duration: formatDuration(new Date(2026, 0, 1)),
-          content: [
-            "Promoted to Software Engineer III in recognition of technical leadership and contributions to team success",
-          ],
-        },
-        {
-          title: "Software Engineer II",
-          time: "March 2024 - January 2026",
-          duration: formatDuration(new Date(2024, 2, 1), new Date(2026, 0, 1)),
-          content: [
-            "Developed internal tools and applications to streamline customer relations workflows and improve team productivity",
-            "Collaborated with cross-functional teams to design and implement scalable solutions using modern web technologies",
-            "Mentored peers and conducted code reviews to maintain high code quality standards",
-            "Maintained nearly 100% code coverage on pull requests with comprehensive unit and integration tests; added Playwright end-to-end coverage where appropriate",
-          ],
-        },
-      ],
-      technologies: [
-        "React",
-        "C#/.NET",
-        "TypeScript",
-        "REST APIs",
-        "GraphQL",
-        "RabbitMQ",
-        "Kubernetes",
-        "Grafana",
-        "Vault",
-        "Playwright",
-        "SQL Server",
-        "LLM",
-        "RAG",
-        "VertexAI",
-        "LangGraph",
-      ],
-    },
-    {
-      company: "Lexicon",
-      logo: "/images/lexicon-logo.png",
-      location: "Remote",
-      position: "Full Stack Software Developer",
-      time: "March 2023 - March 2024",
-      timeSummary: " (1 yr)",
-      content: [
-        "Integrated new features in modern Angular applications and refactored legacy codebase for improved maintainability",
-        "Worked closely with QA and PMOs to design, build, and deliver software features with high user satisfaction",
-        "Implemented database optimizations and API improvements resulting in 30% faster response times",
-      ],
-      technologies: ["Angular", "C#/.NET", "SSMS", "REST APIs"],
-    },
-    {
-      company: "Dollar Bank",
-      logo: "/images/dollar-bank-logo.png",
-      location: "Pittsburgh, PA",
-      position: "Senior Application Developer",
-      time: "August 2021 - March 2023",
-      timeSummary: " (1 yr 8 mos)",
-      content: [
-        "Developed enterprise .NET applications from console applications to web services serving thousands of users",
-        "Led the migration of legacy ASP.NET web pages to modern .NET MVC architecture",
-        "Built and maintained SSIS packages for critical data migration and synchronization between systems",
-      ],
-      technologies: ["Razor", "C#/.NET", "SQL Server", "SSIS", "ASP.NET MVC"],
-    },
-    {
-      company: "aSa",
-      logo: "/images/aSa-logo.png",
-      location: "Murrysville, PA",
-      position: "Software Developer II",
-      time: "May 2018 - August 2021",
-      timeSummary: " (3 yrs 4 mos)",
-      content: [
-        "Led development across Processing and Inventory Tracking teams, implementing critical features using AngularJS and Entity Framework",
-        "Provided global customer support and resolved production issues across multiple time zones",
-        "Designed and developed SSRS reports used daily by customers worldwide for business operations",
-      ],
-      technologies: [
-        "AngularJS",
-        "C#/.NET",
-        "Entity Framework",
-        "SSRS",
-        "SQL Server",
-      ],
-    },
-  ];
-
-  const education = {
-    school: "Saint Vincent College",
-    logo: "/images/svc-logo.png",
-    location: "Latrobe, PA",
-    position: "BS - Computing and Information Science",
-    time: "",
-    content: [
-      "Courses taken include Server Side Programming, Database Concepts and Information Structures, Software Engineering, Discrete Mathematics, Computer Architecture and Operating Systems and Website Design.",
-    ],
-  };
 
   return (
     <div className="min-h-screen pb-20">
@@ -154,7 +154,7 @@ const Home = () => {
             {workExperience.map((experience, index) => (
               <div
                 key={experience.company}
-                className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active ${
+                className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active transition-all duration-700 ease-out ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}

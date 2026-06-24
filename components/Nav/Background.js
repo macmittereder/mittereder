@@ -49,6 +49,8 @@ const Background = () => {
       particles.push(createParticle(canvas));
     }
 
+    let animationFrameId;
+
     // Animation loop
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -96,19 +98,21 @@ const Background = () => {
         });
       });
 
-      requestAnimationFrame(animate);
+      animationFrameId = requestAnimationFrame(animate);
     };
 
-    animate();
+    animationFrameId = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
   return (
     <canvas
       ref={canvasRef}
+      aria-hidden="true"
       className="fixed inset-0 w-full h-full -z-10"
       style={{
         background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)",
