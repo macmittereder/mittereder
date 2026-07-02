@@ -94,8 +94,8 @@ const Navigation = () => {
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20">
                 <span className="text-white font-bold text-sm">M</span>
               </div>
-              <span className="text-slate-200 font-semibold text-lg hidden md:block group-hover:text-white transition-colors">
-                Mackenzie
+                <span className="text-slate-200 font-semibold text-lg hidden md:block group-hover:text-white transition-colors">
+                Mac
               </span>
             </Link>
 

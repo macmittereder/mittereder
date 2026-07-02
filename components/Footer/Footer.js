@@ -12,7 +12,7 @@ const Footer = () => {
                 <span className="text-white font-bold text-lg">M</span>
               </div>
               <span className="text-white font-bold text-xl tracking-tight">
-                Mackenzie Mittereder
+                Mac Mittereder
               </span>
             </div>
             <p className="text-slate-400 text-base leading-relaxed max-w-md mb-8">
@@ -71,8 +71,8 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} Mackenzie Mittereder. All rights reserved.
+            <p className="text-slate-500 text-sm">
+            © {new Date().getFullYear()} Mac Mittereder. All rights reserved.
           </p>
           <p className="text-slate-600 text-xs">
             Built with Next.js, Tailwind CSS & Vercel
