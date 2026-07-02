@@ -2,14 +2,14 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
-  title: "Mackenzie Mittereder - Software Engineer",
+  title: "Mac Mittereder - Software Engineer",
   description:
     "Full-stack software engineer specializing in React, Next.js, and modern web technologies. View my portfolio of projects and experience.",
   keywords:
     "software engineer, full-stack developer, React, Next.js, portfolio",
-  authors: [{ name: "Mackenzie Mittereder" }],
+  authors: [{ name: "Mac Mittereder" }],
   openGraph: {
-    title: "Mackenzie Mittereder - Software Engineer",
+    title: "Mac Mittereder - Software Engineer",
     description:
       "Full-stack software engineer specializing in React, Next.js, and modern web technologies.",
     type: "website",

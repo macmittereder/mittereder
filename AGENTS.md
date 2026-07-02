@@ -4,7 +4,7 @@ This file provides guidance to Codex when working with code in this repository.
 
 ## Project Overview
 
-Personal portfolio website for Mackenzie Mittereder, a Senior Software Engineer. Built with Next.js 16, React 19, Tailwind CSS 3, and TypeScript tooling. Deployed on Vercel with static export support.
+Personal portfolio website for Mac Mittereder, a Senior Software Engineer. Built with Next.js 16, React 19, Tailwind CSS 3, and TypeScript tooling. Deployed on Vercel with static export support.
 
 ## Codex Workflow
 

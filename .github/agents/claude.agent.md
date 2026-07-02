@@ -1,10 +1,15 @@
-# CLAUDE.md
+---
+name: claude-legacy
+description: "Legacy Claude guidance migrated to a custom agent file. Not actively used; retained for reference."
+---
+
+# CLAUDE (Legacy)
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
 
-Personal portfolio website for Mackenzie Mittereder (Senior Software Engineer). Built with Next.js 16, React 19, Tailwind CSS 3, and TypeScript tooling. Deployed on Vercel with static export support.
+Personal portfolio website for Mac Mittereder (Senior Software Engineer). Built with Next.js 16, React 19, Tailwind CSS 3, and TypeScript tooling. Deployed on Vercel with static export support.
 
 ## Commands
 

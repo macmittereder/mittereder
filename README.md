@@ -1,4 +1,4 @@
-# Mackenzie Mittereder Portfolio Website
+# Mac Mittereder Portfolio Website
 
 This is my personal portfolio website showcasing my work experience, education, and various projects I've developed.
 
@@ -110,4 +110,4 @@ The conversion maintains all original functionality while providing:
 ## Contact
 
 - **GitHub**: [macmittereder](https://github.com/macmittereder)
-- **LinkedIn**: [Mackenzie Mittereder](https://www.linkedin.com/in/mackenzie-mittereder/)
+- **LinkedIn**: [Mac Mittereder](https://www.linkedin.com/in/mackenzie-mittereder/)
