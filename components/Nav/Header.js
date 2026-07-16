@@ -71,18 +71,18 @@ const Header = () => {
               <p className="text-sm text-slate-500 mb-6 font-medium uppercase tracking-wider">
                 Trusted by industry leaders
               </p>
-              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-90">
+              <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
                 {featuredCompanies.map((company) => (
                   <div
                     key={company.company}
-                    className="h-8 md:h-10 w-auto relative flex items-center justify-center"
+                    className="h-14 md:h-16 w-auto relative flex items-center justify-center rounded-xl bg-white/95 px-5 md:px-6 shadow-lg shadow-slate-950/20 ring-1 ring-white/10"
                   >
                     <Image
                       src={company.logo}
                       width={200}
                       height={50}
                       alt={company.company}
-                      className="h-full w-auto object-contain"
+                      className="h-8 md:h-10 w-auto object-contain"
                     />
                   </div>
                 ))}
