@@ -2,26 +2,24 @@
 
 import { useEffect, useRef } from "react";
 
-const createParticle = (canvas) => {
-  const base = {
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    vx: (Math.random() - 0.5) * 0.5,
-    vy: (Math.random() - 0.5) * 0.5,
-    size: Math.random() * 2 + 1,
-    opacity: Math.random() * 0.5 + 0.2,
-  };
+const PARTICLE_COUNT = 50;
+const CONNECTION_DISTANCE = 100;
 
-  return {
-    ...base,
-    update(canvasRef) {
-      this.x += this.vx;
-      this.y += this.vy;
+const createParticle = (width, height) => ({
+  x: Math.random() * width,
+  y: Math.random() * height,
+  vx: (Math.random() - 0.5) * 0.5,
+  vy: (Math.random() - 0.5) * 0.5,
+  size: Math.random() * 2 + 1,
+  opacity: Math.random() * 0.5 + 0.2,
+});
 
-      if (this.x < 0 || this.x > canvasRef.width) this.vx *= -1;
-      if (this.y < 0 || this.y > canvasRef.height) this.vy *= -1;
-    },
-  };
+const updateParticle = (particle, width, height) => {
+  particle.x += particle.vx;
+  particle.y += particle.vy;
+
+  if (particle.x < 0 || particle.x > width) particle.vx *= -1;
+  if (particle.y < 0 || particle.y > height) particle.vy *= -1;
 };
 
 const Background = () => {
@@ -29,9 +27,15 @@ const Background = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
+    if (!canvas) return;
 
-    // Set canvas size
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -40,22 +44,7 @@ const Background = () => {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    // Particle system
-    const particles = [];
-    const particleCount = 50;
-
-    // Create particles
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(createParticle(canvas));
-    }
-
-    let animationFrameId;
-
-    // Animation loop
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Draw gradient background
+    if (prefersReducedMotion) {
       const gradient = ctx.createRadialGradient(
         canvas.width / 2,
         canvas.height / 2,
@@ -69,34 +58,61 @@ const Background = () => {
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Update and draw particles
-      particles.forEach((particle) => {
-        particle.update(canvas);
+      return () => {
+        window.removeEventListener("resize", resizeCanvas);
+      };
+    }
+
+    const particles = Array.from({ length: PARTICLE_COUNT }, () =>
+      createParticle(canvas.width, canvas.height)
+    );
+
+    let animationFrameId;
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const gradient = ctx.createRadialGradient(
+        canvas.width / 2,
+        canvas.height / 2,
+        0,
+        canvas.width / 2,
+        canvas.height / 2,
+        canvas.width / 2
+      );
+      gradient.addColorStop(0, "rgba(15, 23, 42, 1)");
+      gradient.addColorStop(1, "rgba(30, 41, 59, 1)");
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      for (const particle of particles) {
+        updateParticle(particle, canvas.width, canvas.height);
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(59, 130, 246, ${particle.opacity})`;
         ctx.fill();
-      });
+      }
 
-      // Draw connections
-      particles.forEach((particle, i) => {
-        particles.slice(i + 1).forEach((otherParticle) => {
-          const dx = particle.x - otherParticle.x;
-          const dy = particle.y - otherParticle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const a = particles[i];
+          const b = particles[j];
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const distance = Math.hypot(dx, dy);
 
-          if (distance < 100) {
+          if (distance < CONNECTION_DISTANCE) {
             ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
             ctx.strokeStyle = `rgba(59, 130, 246, ${
-              0.1 * (1 - distance / 100)
+              0.1 * (1 - distance / CONNECTION_DISTANCE)
             })`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
-        });
-      });
+        }
+      }
 
       animationFrameId = requestAnimationFrame(animate);
     };

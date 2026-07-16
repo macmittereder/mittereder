@@ -45,7 +45,13 @@ export default [
     },
   },
   {
-    files: ["**/*.config.js", "next.config.js", "postcss.config.js", "tailwind.config.js"],
+    files: [
+      "**/*.config.js",
+      "next.config.js",
+      "postcss.config.js",
+      "tailwind.config.js",
+      "app/api/**/*.{js,ts}",
+    ],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
