@@ -43,6 +43,7 @@ export const workExperience = [
         duration: formatDuration(new Date(2026, 0, 1)),
         content: [
           "Promoted to Software Engineer III in recognition of technical leadership and contributions to team success",
+          "Identified and addressed critical web and business needs, helping keep subscription renewal failures at an all-time low",
         ],
       },
       {
@@ -69,6 +70,9 @@ export const workExperience = [
       "Vault",
       "Playwright",
       "SQL Server",
+      "SQL Query Planner",
+      "Redgate",
+      "Liquibase",
       "LLM",
       "RAG",
       "VertexAI",
