@@ -19,7 +19,7 @@ const ExperienceCard = ({ experience, index, isVisible }) => {
         <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse-slow" />
       </div>
 
-      <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 md:p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-900/10 backdrop-blur-sm group-hover:-translate-y-1">
+      <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 md:p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-900/10 backdrop-blur-xs group-hover:-translate-y-1">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-lg bg-white/5 p-2 flex items-center justify-center border border-white/10">
@@ -126,7 +126,7 @@ const Home = () => {
         id="experience"
         className="section bg-slate-900/20 scroll-mt-24 relative"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-900/50 pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-b from-slate-950 to-slate-900/50 pointer-events-none" />
 
         <div className="container-custom relative z-10">
           <div className="text-center mb-20">
@@ -138,7 +138,7 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
+          <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-linear-to-b before:from-transparent before:via-slate-700 before:to-transparent">
             {workExperience.map((experience, index) => (
               <ExperienceCard
                 key={experience.company}

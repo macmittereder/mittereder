@@ -91,7 +91,7 @@ const Navigation = () => {
         >
           <div className="flex items-center justify-between md:justify-center gap-8">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20">
+              <div className="w-8 h-8 bg-linear-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/20">
                 <span className="text-white font-bold text-sm">M</span>
               </div>
               <span className="text-slate-200 font-semibold text-lg hidden md:block group-hover:text-white transition-colors">
@@ -106,7 +106,7 @@ const Navigation = () => {
                   href={item.href}
                   className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 relative ${
                     activeSection === item.id
-                      ? "text-white bg-white/10 shadow-sm"
+                      ? "text-white bg-white/10 shadow-xs"
                       : "text-slate-400 hover:text-white hover:bg-white/5"
                   }`}
                   onClick={(event) => {
