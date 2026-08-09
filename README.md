@@ -14,7 +14,7 @@ Personal portfolio site for Mac Mittereder, a senior software engineer. Built wi
 
 - **Next.js 16** — App Router
 - **React 19**
-- **Tailwind CSS 3**
+- **Tailwind CSS 4**
 - **Vercel Analytics**
 
 ## Structure
