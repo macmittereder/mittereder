@@ -9,28 +9,28 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@vercel/analytics": "^2.0.1",
-    "next": "^16.2.12",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "@vercel/analytics": "2.0.1",
+    "next": "16.3.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@next/eslint-plugin-next": "^16.2.12",
-    "@tailwindcss/postcss": "^4.3.3",
-    "@types/node": "^22.20.1",
-    "@types/react": "^19.2.17",
-    "@typescript/native": "npm:typescript@^7.0.2",
-    "eslint": "^10.8.0",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "globals": "^17.8.0",
-    "postcss": "8.5.24",
-    "tailwindcss": "^4.3.3",
-    "typescript": "^6.0.3"
+    "@eslint/js": "10.0.1",
+    "@next/eslint-plugin-next": "16.3.3",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "26.4.0",
+    "@types/react": "19.2.18",
+    "@typescript/native": "npm:typescript@7.0.2",
+    "eslint": "10.9.1",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.11.0",
+    "postcss": "8.5.26",
+    "tailwindcss": "4.3.3",
+    "typescript": "7.0.2"
   },
   "overrides": {
     "@babel/core": "7.29.7",
-    "postcss": "8.5.24"
+    "postcss": "8.5.26"
   },
   "engines": {
     "node": "22.x"
