@@ -4,12 +4,16 @@ This file provides guidance to Codex when working with code in this repository.
 
 ## Project Overview
 
-Personal portfolio website for Mac Mittereder, a Senior Software Engineer. Built with Next.js 16, React 19, Tailwind CSS 3, and TypeScript tooling. Deployed on Vercel with static export support.
+Personal portfolio website for Mac Mittereder, a Senior Software Engineer. Built with Next.js 16, React 19, Tailwind CSS 4, and TypeScript 7 tooling. Deployed on Vercel.
 
 ## Codex Workflow
 
-- Use Serena MCP first for code understanding and targeted edits: project memories, symbol overviews, symbol search, reference lookup, and symbolic edits where appropriate.
-- Use Playwright MCP for frontend verification: inspect snapshots, take screenshots, and check desktop and mobile viewports after UI changes.
+- Use Serena MCP when available for code understanding and targeted edits:
+  project memories, symbol overviews, symbol search, reference lookup, and
+  symbolic edits where appropriate. Otherwise use `rg` and focused file reads.
+- Use Playwright MCP when available for frontend verification: inspect
+  snapshots, take screenshots, and check desktop and mobile viewports after UI
+  changes.
 - Use normal shell commands for package scripts, linting, builds, git status, and simple file discovery.
 - Prefer `rg` and `rg --files` for local searches.
 - Keep edits scoped to the requested behavior and follow the existing component and Tailwind patterns.
@@ -44,8 +48,10 @@ Personal portfolio website for Mac Mittereder, a Senior Software Engineer. Built
 
 ## Configuration Notes
 
-- `next.config.js`: Image optimization disabled with `unoptimized: true`; trailing slashes enabled for static hosting compatibility.
-- `tsconfig.json`: Path alias `~/*` maps to `./tests/*`.
+- `next.config.js`: Image optimization is disabled with `unoptimized: true`,
+  trailing slashes are enabled, and security headers/CSP are configured. The
+  repository does not set Next.js `output: "export"`.
+- `tsconfig.json`: Path alias `@/*` maps to the repository root (`./`).
 - `package.json`: Node engine requirement is `22.x`.
 - `eslint.config.mjs`: ESLint uses flat config format.
 
