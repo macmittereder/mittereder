@@ -76,7 +76,7 @@ export const workExperience = [
       "LLM",
       "RAG",
       "Vertex AI",
-      "LangGraph",
+      "LangChain",
     ],
   },
   {
