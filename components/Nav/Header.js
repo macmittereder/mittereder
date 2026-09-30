@@ -32,8 +32,7 @@ const Header = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-              I&apos;m a software engineer at WebstaurantStore. I build web
-              applications with React and .NET.
+              Software Engineer III at WebstaurantStore.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
