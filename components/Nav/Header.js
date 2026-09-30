@@ -67,7 +67,7 @@ const Header = () => {
               </a>
             </div>
 
-            <div className="border-t border-white/5 pt-10">
+            <div className="border-t border-white/5 pt-10 pb-8">
               <p className="text-sm text-slate-500 mb-6 font-medium uppercase tracking-wider">
                 Trusted by industry leaders
               </p>
@@ -75,7 +75,7 @@ const Header = () => {
                 {featuredCompanies.map((company) => (
                   <div
                     key={company.company}
-                    className="h-14 md:h-16 w-auto relative flex items-center justify-center rounded-xl bg-white/95 px-5 md:px-6 shadow-lg shadow-slate-950/20 ring-1 ring-white/10"
+                    className="h-14 md:h-16 w-auto relative flex items-center justify-center rounded-xl border border-white/20 bg-white/10 bg-linear-to-br from-white/20 via-white/5 to-white/10 px-5 md:px-6 shadow-lg shadow-slate-950/20 backdrop-blur-2xl ring-1 ring-inset ring-white/10"
                   >
                     <Image
                       src={company.logo}
