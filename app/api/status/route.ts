@@ -1,9 +1,5 @@
-import { NextResponse } from "next/server";
+import { getStatus } from './status.ts';
 
-export async function GET() {
-  return NextResponse.json({
-    status: "ok",
-    message: "Mittereder website is running",
-    timestamp: new Date().toISOString(),
-  });
+export function GET() {
+  return Response.json(getStatus());
 }

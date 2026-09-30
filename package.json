@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "node --experimental-strip-types --test app/api/status/route.test.mts"
   },
   "dependencies": {
     "@vercel/analytics": "2.0.1",
@@ -33,6 +34,6 @@
     "postcss": "8.5.28"
   },
   "engines": {
-    "node": "22.x"
+    "node": ">=22.6.0"
   }
 }

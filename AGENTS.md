@@ -24,6 +24,7 @@ Personal portfolio website for Mac Mittereder, a Senior Software Engineer. Built
 - `npm run build` - Production build.
 - `npm run start` - Serve production build.
 - `npm run lint` - ESLint across `.js`, `.jsx`, `.ts`, and `.tsx` files.
+- `npm test` - Run the built-in Node test suite (requires Node 22.6 or newer).
 
 ## Architecture
 
@@ -52,11 +53,13 @@ Personal portfolio website for Mac Mittereder, a Senior Software Engineer. Built
   trailing slashes are enabled, and security headers/CSP are configured. The
   repository does not set Next.js `output: "export"`.
 - `tsconfig.json`: Path alias `@/*` maps to the repository root (`./`).
-- `package.json`: Node engine requirement is `22.x`.
+- `package.json`: Node engine requirement is `>=22.6.0`; the built-in
+  TypeScript-stripping test command needs Node 22.6 or newer.
 - `eslint.config.mjs`: ESLint uses flat config format.
 
 ## Verification Expectations
 
 - Run `npm run lint` for code changes when practical.
+- Add or update Node tests for deterministic route and domain behavior.
 - Run `npm run build` for changes that affect routing, config, rendering, or dependencies.
 - For visual changes, start `npm run dev` and verify with Playwright MCP on desktop and mobile viewports.
