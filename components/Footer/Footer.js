@@ -18,9 +18,6 @@ const Footer = () => {
                 Mac Mittereder
               </span>
             </div>
-            <p className="text-slate-400 text-base leading-relaxed max-w-md mb-8">
-              8+ years in software development.
-            </p>
             <div className="flex gap-4">
               <SocialLinks links={SOCIAL_LINKS} variant="footer" />
             </div>
