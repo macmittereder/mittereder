@@ -124,7 +124,7 @@ const Home = () => {
     <div className="min-h-screen pb-20">
       <section
         id="experience"
-        className="section bg-slate-900/20 scroll-mt-24 relative"
+        className="section bg-slate-900/20 scroll-mt-12 md:scroll-mt-24 relative"
       >
         <div className="absolute inset-0 bg-linear-to-b from-slate-950 to-slate-900/50 pointer-events-none" />
 
