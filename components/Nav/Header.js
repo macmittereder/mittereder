@@ -28,15 +28,14 @@ const Header = () => {
             }`}
           >
             <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight mb-8 text-white">
-              Building <span className="gradient-text">digital</span>
+              Full-stack software
               <br />
-              <span className="gradient-text">experiences</span> that matter.
+              <span className="gradient-text">engineer.</span>
             </h1>
 
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-              I&apos;m <span className="text-white font-semibold">Mac Mittereder</span>,
-              a full-stack engineer crafting high-performance web applications with
-              React, .NET, and modern cloud architecture.
+              I&apos;m <span className="text-white font-semibold">Mac Mittereder</span>.
+              I build web applications with React and .NET.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
@@ -69,7 +68,7 @@ const Header = () => {
 
             <div className="border-t border-white/5 pt-10 pb-8">
               <p className="text-sm text-slate-500 mb-6 font-medium uppercase tracking-wider">
-                Trusted by industry leaders
+                Experience at
               </p>
               <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
                 {featuredCompanies.map((company) => (

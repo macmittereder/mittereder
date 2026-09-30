@@ -129,13 +129,10 @@ const Home = () => {
         <div className="absolute inset-0 bg-linear-to-b from-slate-950 to-slate-900/50 pointer-events-none" />
 
         <div className="container-custom relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-6xl font-bold">
               Work <span className="gradient-text">Experience</span>
             </h2>
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-              My professional journey in software development
-            </p>
           </div>
 
           <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-linear-to-b before:from-transparent before:via-slate-700 before:to-transparent">
