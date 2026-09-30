@@ -28,11 +28,15 @@ const Header = () => {
             }`}
           >
             <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight mb-8 text-white">
-              Mac <span className="gradient-text">Mittereder</span>
+              Building <span className="gradient-text">digital</span>
+              <br />
+              <span className="gradient-text">experiences</span> that matter.
             </h1>
 
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Software Engineer III at WebstaurantStore.
+              I&apos;m <span className="text-white font-semibold">Mac Mittereder</span>,
+              a full-stack engineer crafting high-performance web applications with
+              React, .NET, and modern cloud architecture.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
