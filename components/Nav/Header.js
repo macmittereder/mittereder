@@ -28,14 +28,12 @@ const Header = () => {
             }`}
           >
             <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold tracking-tight mb-8 text-white">
-              Full-stack software
-              <br />
-              <span className="gradient-text">engineer.</span>
+              Mac <span className="gradient-text">Mittereder</span>
             </h1>
 
             <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-              I&apos;m <span className="text-white font-semibold">Mac Mittereder</span>.
-              I build web applications with React and .NET.
+              I&apos;m a software engineer at WebstaurantStore. I build web
+              applications with React and .NET.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
