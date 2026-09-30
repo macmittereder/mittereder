@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 export const metadata = {
   title: "Mac Mittereder - Software Engineer",
   description:
-    "Full-stack software engineer specializing in React, Next.js, and modern web technologies. View my portfolio of projects and experience.",
+    "Full-stack software engineer specializing in React, Next.js, and modern web technologies. View my experience and education.",
   keywords:
     "software engineer, full-stack developer, React, Next.js, portfolio",
   authors: [{ name: "Mac Mittereder" }],

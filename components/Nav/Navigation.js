@@ -68,14 +68,6 @@ const Navigation = () => {
     };
   }, [isMobileMenuOpen]);
 
-  const scrollToSection = (id) => {
-    if (id === "home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <>
       <nav
@@ -109,10 +101,6 @@ const Navigation = () => {
                       ? "text-white bg-white/10 shadow-xs"
                       : "text-slate-400 hover:text-white hover:bg-white/5"
                   }`}
-                  onClick={(event) => {
-                    event.preventDefault();
-                    scrollToSection(item.id);
-                  }}
                 >
                   {item.label}
                 </Link>
@@ -179,11 +167,7 @@ const Navigation = () => {
                   ? "text-blue-400"
                   : "text-slate-400 hover:text-white"
               }`}
-              onClick={(event) => {
-                event.preventDefault();
-                setIsMobileMenuOpen(false);
-                scrollToSection(item.id);
-              }}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {item.label}
             </Link>

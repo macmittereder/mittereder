@@ -22,7 +22,7 @@ const ExperienceCard = ({ experience, index, isVisible }) => {
       <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 md:p-8 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-blue-500/30 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-900/10 backdrop-blur-xs group-hover:-translate-y-1">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-lg bg-white/5 p-2 flex items-center justify-center border border-white/10">
+            <div className="w-14 h-10 md:w-16 md:h-12 rounded-lg bg-white/10 p-1 md:p-2 flex items-center justify-center border border-white/10">
               <Image
                 src={experience.logo}
                 alt={`${experience.company} logo`}

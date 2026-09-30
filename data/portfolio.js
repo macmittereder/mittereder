@@ -75,7 +75,7 @@ export const workExperience = [
       "Liquibase",
       "LLM",
       "RAG",
-      "VertexAI",
+      "Vertex AI",
       "LangGraph",
     ],
   },
@@ -150,9 +150,9 @@ export const education = {
   school: "Saint Vincent College",
   logo: "/images/svc-logo.png",
   location: "Latrobe, PA",
-  degree: "BS - Computing and Information Science",
+  degree: "B.S. in Computing and Information Science",
   summary:
-    "Courses taken include Server Side Programming, Database Concepts and Information Structures, Software Engineering, Discrete Mathematics, Computer Architecture and Operating Systems and Website Design.",
+    "Relevant coursework includes Server-Side Programming, Database Concepts and Information Structures, Software Engineering, Discrete Mathematics, Computer Architecture and Operating Systems, and Website Design.",
 };
 
 export const NAV_ITEMS = [
