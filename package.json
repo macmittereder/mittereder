@@ -25,13 +25,13 @@
     "eslint": "10.12.0",
     "eslint-plugin-react-hooks": "7.1.1",
     "globals": "17.13.0",
-    "postcss": "8.5.29",
+    "postcss": "8.5.30",
     "tailwindcss": "4.3.3",
     "typescript": "7.0.2"
   },
   "overrides": {
     "@babel/core": "7.29.7",
-    "postcss": "8.5.29"
+    "postcss": "8.5.30"
   },
   "engines": {
     "node": ">=22.6.0"
