@@ -53,7 +53,7 @@ Personal portfolio website for Mac Mittereder, a Senior Software Engineer. Built
   trailing slashes are enabled, and security headers/CSP are configured. The
   repository does not set Next.js `output: "export"`.
 - `tsconfig.json`: Path alias `@/*` maps to the repository root (`./`).
-- `package.json`: Node engine requirement is `>=22.6.0`; the built-in
+- `package.json`: the app runtime is pinned to Node `24.x`; the built-in
   TypeScript-stripping test command needs Node 22.6 or newer.
 - `eslint.config.mjs`: ESLint uses flat config format.
 
@@ -63,3 +63,13 @@ Personal portfolio website for Mac Mittereder, a Senior Software Engineer. Built
 - Add or update Node tests for deterministic route and domain behavior.
 - Run `npm run build` for changes that affect routing, config, rendering, or dependencies.
 - For visual changes, start `npm run dev` and verify with Playwright MCP on desktop and mobile viewports.
+
+<!-- BEGIN:nextjs-agent-rules -->
+
+## This is NOT the Next.js you know
+
+This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+
+This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+
+<!-- END:nextjs-agent-rules -->
